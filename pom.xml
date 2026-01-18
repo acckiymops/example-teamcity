@@ -17,6 +17,10 @@
 				<id>nexus</id>
 				<url>http://158.160.190.3:8081/repository/maven-releases</url>
 		</repository>
+		<snapshotRepository>
+        		<id>nexus</id>
+        		<url>http://158.160.190.3:8081/repository/maven-snapshots</url>
+    	</snapshotRepository>
 	</distributionManagement>
 	<dependencies>
 		<dependency>
