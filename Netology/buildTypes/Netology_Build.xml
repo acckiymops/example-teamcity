@@ -3,13 +3,10 @@
   <name>Build</name>
   <description />
   <settings>
-    <disabled-settings>
-      <setting-ref ref="Maven2_1" />
-    </disabled-settings>
     <build-runners>
       <runner id="Maven2" name="" type="Maven2">
         <conditions>
-          <contains name="teamcity.build.branch" value="master" />
+          <equals name="teamcity.build.branch.is_default" value="true" />
         </conditions>
         <parameters>
           <param name="goals" value="clean deploy" />
@@ -23,7 +20,7 @@
       </runner>
       <runner id="Maven2_1" name="Maven2" type="Maven2">
         <conditions>
-          <does-not-contain name="teamcity.build.branch" value="master" />
+          <does-not-equal name="teamcity.build.branch" value="master" />
         </conditions>
         <parameters>
           <param name="goals" value="clean test" />
